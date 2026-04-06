@@ -22,4 +22,5 @@ Usage:
 Running the demo:
     (After the usage steps)
     pip install -r requirements-demo.txt
+    ollama pull nomic-embed-text
     python demo.py
