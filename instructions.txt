@@ -1,0 +1,25 @@
+Usage:
+    Creating the encironment (if not already done):
+        python -m venv venv
+        Run any ONE of these:
+            For Linux / MacOS / BSD:
+                source venv/bin/activate
+            OR For windows CMD:
+                venv\Scripts\activate.bat
+            OR For windows PowerShell:
+                venv\Scripts\Activate.ps1
+
+    Installing the dependencies:
+        pip install -r requirements.txt
+
+    Call the function (example):
+        import document_embedding
+        embedding = asyncio.run(aget_embeddings_from_documents(
+                    ["~/Documents/1.pdf", "~/Documents/2.pdf"],  # Paths to all the documents
+                    OllamaEmbeddings(model="nomic-embed-text:latest")  # Any embedding model (OpenAI, Deepseek, Ollama, etc.)
+        )) 
+
+Running the demo:
+    (After the usage steps)
+    pip install -r requirements-demo.txt
+    python demo.py
