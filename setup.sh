@@ -7,7 +7,7 @@ echo "Running in 2..."
 sleep 1
 echo "Running in 1..."
 sleep 1
-echo "installing python3"
+echo "installing dependencies"
 apt update
 apt install -y python3 python3-venv curl zstd git
 echo "installing ollama"
@@ -17,10 +17,13 @@ service ollama start
 echo "Creating python3 environment"
 python3 -m venv venv
 source venv/bin/activate
-echo "Installing dependencies"
+echo "Installing demo program dependencies"
 pip install -r requirements-demo.txt
-echo "Pulling ollama demo embedding model"
+echo "Pulling ollama demo embedding model (this will take a lot of time)"
 ollama pull nomic-embed-text
-echo "Installation complete\a"
 echo "Downloading the project with demo"
-echo "Run python demo.py to confirm if its working"
+git pull https://github.com/Koshin-S-Hegde/manvitha/
+echo "Installation complete\a"
+echo "Further instructions :"
+echo "Run this command : cd manvitha"
+echo "Run this command after the previous command : python3 demo.py"

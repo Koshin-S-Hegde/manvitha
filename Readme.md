@@ -1,0 +1,34 @@
+Ensure you are in the folder where this file is downloaded before running any commands (IMPORTANT)
+You can do this with:
+    cd ~
+    cd folder/project
+    Replace "folder/project" with the folder where the project is present
+
+Automatic:
+    Run this command : gedit setup.sh
+    Paste the content from https://github.com/Koshin-S-Hegde/manvitha/blob/main/setup.sh
+    Save the file and close gedit
+    sudo sh ./setup.sh
+    cd manvitha
+    python3 demo.py
+
+Manual:
+    git clone https://github.com/Koshin-S-Hegde/manvitha/
+    cd manvitha
+    # Installing dependencies
+    apt update
+    apt install -y python3 python3-venv curl zstd
+    # Installing ollama
+    curl -fsSL https://ollama.com/install.sh | sh
+    service ollama start
+    # setting up environment
+    python3 -m venv venv
+    source venv/bin/activate
+    # Install demo program dependencies
+    pip install -r requirements-demo.txt
+    # Pull the required model
+    ollama pull nomic-embed-text
+    # IMPORTANT : replace ["~/Documents/1.pdf", "~/Documents/2.pdf"] with a list of required documents
+    # IMPORTANT : the demo only supports VERY small files. "document_embedding.py" contains instructions for usage in production
+    # Run the demo
+    python3 demo.py
