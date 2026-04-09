@@ -1,4 +1,4 @@
-#/bin/env - sh
+#/bin/env - bash
 echo "WARNING : Please run this command in the folder where the project is present"
 echo "Press CTRL + C to cancel"
 echo "Running in 3..."
@@ -22,7 +22,7 @@ service ollama start
 echo "Pulling ollama demo embedding model (this will take a lot of time)"
 ollama pull nomic-embed-text
 echo "Downloading the project with demo"
-git pull https://github.com/Koshin-S-Hegde/manvitha/
+git clone https://github.com/Koshin-S-Hegde/manvitha/
 echo "Installation complete :3"
 echo "Further instructions :"
 echo "Run this command : cd manvitha"
