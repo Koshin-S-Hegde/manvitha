@@ -1,26 +1,22 @@
-Usage:
-    Creating the encironment (if not already done):
-        python -m venv venv
-        Run any ONE of these:
-            For Linux / MacOS / BSD:
-                source venv/bin/activate
-            OR For windows CMD:
-                venv\Scripts\activate.bat
-            OR For windows PowerShell:
-                venv\Scripts\Activate.ps1
+Ensure you are in the folder where this file is downloaded before running any commands (IMPORTANT)
+You can do this with:
+    cd ~
+    cd project/manvitha/
+    Replace "project/manvitha" with the folder this file is present in of this file
 
-    Installing the dependencies:
-        pip install -r requirements.txt
+Automatic:
+    sudo sh ./setup.sh
 
-    Call the function (example):
-        import document_embedding
-        embedding = asyncio.run(aget_embeddings_from_documents(
-                    ["~/Documents/1.pdf", "~/Documents/2.pdf"],  # Paths to all the documents
-                    OllamaEmbeddings(model="nomic-embed-text:latest")  # Any embedding model (OpenAI, Deepseek, Ollama, etc.)
-        )) 
-
-Running the demo:
-    (After the usage steps)
+Manual:
+    # Installing dependencies
+    apt update
+    apt install -y python3 python3-venv curl zstd
+    # Installing ollama
+    curl -fsSL https://ollama.com/install.sh | sh
+    service ollama start
+    # setting up environment
+    python3 -m venv venv
+    source venv/bin/activate
     pip install -r requirements-demo.txt
     ollama pull nomic-embed-text
-    python demo.py
+    python3 
