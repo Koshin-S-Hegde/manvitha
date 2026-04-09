@@ -1,1 +1,1 @@
-Instructions are present here : https://github.com/Koshin-S-Hegde/manvitha/blob/main/instructions.txt
+Click this for instructions : https://github.com/Koshin-S-Hegde/manvitha/blob/main/instructions.txt

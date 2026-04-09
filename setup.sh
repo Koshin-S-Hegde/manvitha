@@ -23,7 +23,7 @@ echo "Pulling ollama demo embedding model (this will take a lot of time)"
 ollama pull nomic-embed-text
 echo "Downloading the project with demo"
 git pull https://github.com/Koshin-S-Hegde/manvitha/
-echo "Installation complete\a"
+echo "Installation complete :3"
 echo "Further instructions :"
 echo "Run this command : cd manvitha"
 echo "Run this command after the previous command : python3 demo.py"

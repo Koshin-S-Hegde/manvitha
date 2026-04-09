@@ -4,15 +4,17 @@ You can do this with:
     cd folder/project
     Replace "folder/project" with the folder where the project is present
 
-Automatic:
-    Run this command : gedit setup.sh
+Automatic (Preferred):
+    Run this command :
+        gedit setup.sh
     Paste the content from https://github.com/Koshin-S-Hegde/manvitha/blob/main/setup.sh
     Save the file and close gedit
-    sudo sh ./setup.sh
-    cd manvitha
-    python3 demo.py
+    Run the following commands:
+        sudo sh ./setup.sh
+        cd manvitha
+        python3 demo.py
 
-Manual:
+Manual (Run these commands, lines starting with # are for you to read and are not commands):
     git clone https://github.com/Koshin-S-Hegde/manvitha/
     cd manvitha
     # Installing dependencies
