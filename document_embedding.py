@@ -1,12 +1,12 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.embeddings import Embeddings
-from langchain_core.vectorstores import InMemoryVectorStore
+from langchain_core.vectorstores import InMemoryVectorStore, VectorStore
 
 
-def get_embeddings_from_documents(document_paths: list[str], embedding: Embeddings) -> Embeddings:
+def get_embeddings_from_documents(document_paths: list[str], embedding: Embeddings) -> VectorStore:
     """Synchronous, slower (Not preferred)
     Usage example:
-        embedding = get_embeddings_from_documents(
+        vectordb = aget_vectordb_from_documents(
                     ["~/Documents/1.pdf", "~/Documents/2.pdf"],
                     OllamaEmbeddings(model="nomic-embed-text:latest")
         )
@@ -18,13 +18,13 @@ def get_embeddings_from_documents(document_paths: list[str], embedding: Embeddin
                 path,
                 mode="page",
         ).lazy_load()))
-    return vector_store.embeddings
+    return vector_store
 
 
-async def aget_embeddings_from_documents(document_paths: list[str], embedding: Embeddings) -> Embeddings:
+async def aget_vectordb_from_documents(document_paths: list[str], embedding: Embeddings) -> VectorStore:
     """Asynchronous, much faster (preferred)
     Usage example:
-        embedding = asyncio.run(aget_embeddings_from_documents(
+        vectordb = asyncio.run(aget_vectordb_from_documents(
                     ["~/Documents/1.pdf", "~/Documents/2.pdf"],
                     OllamaEmbeddings(model="nomic-embed-text:latest")
         ))
@@ -39,4 +39,4 @@ async def aget_embeddings_from_documents(document_paths: list[str], embedding: E
         ).lazy_load())))
     for process in processes:
         await process
-    return vector_store.embeddings
+    return vector_store
